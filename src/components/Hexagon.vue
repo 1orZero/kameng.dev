@@ -1,16 +1,14 @@
 <template>
-	<div class="z-[1]">
-		<div class="hexagon">
-			<div class="text-white text-[2rem]">text</div>
-		</div>
+	<div class="relative h-[20rem] w-[20rem]">
+		<div class="image-hexagon"></div>
+		<div class="hexagon"></div>
 	</div>
 </template>
 
 <script setup lang="ts"></script>
 <style scoped>
 .hexagon {
-	@apply w-[16rem] h-[16rem] p-[2.5rem] block relative;
-
+	@apply z-[1] w-[16rem] h-[16rem] p-[2.5rem] block absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2;
 	background: linear-gradient(
 		143deg,
 		rgba(35, 57, 93, 1) 0%,
@@ -22,10 +20,16 @@
 	animation: steam 4s linear infinite;
 	clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
 }
-.hexagon::before {
-	@apply top-[-.4rem] left-[-.4rem] w-[17rem] h-[17rem] absolute z-[-1];
-	background-color: red;
+.image-hexagon {
+	@apply z-[2] absolute  w-[14rem] h-[14rem] top-[50%] left-[50%] -translate-x-1/2  -translate-y-1/2;
+	clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+	background: url(https://avatars.githubusercontent.com/u/53516684?v=4);
+	background-size: contain;
 }
+/* .hexagon::before {
+	@apply top-[-.4rem] left-[-.4rem] w-[17rem] h-[17rem];
+	background-color: red;
+} */
 
 @keyframes steam {
 	0% {

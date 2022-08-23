@@ -3,4 +3,14 @@
 @tailwind utilities;
 html {
 	font-size: 10px;
+	height: 100%;
+}
+body {
+	height: 100%;
+}
+#app {
+	height: 100%;
+}
+hr {
+	@apply bg-gray-500 h-[.1rem] border-none;
 }
