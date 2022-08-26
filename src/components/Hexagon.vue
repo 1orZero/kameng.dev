@@ -1,11 +1,19 @@
 <template>
 	<div class="relative h-[20rem] w-[20rem]">
-		<div class="image-hexagon"></div>
+		<div
+			v-if="icon"
+			class="image-hexagon"
+			:style="`background-image:url(${icon});`"
+		></div>
 		<div class="hexagon"></div>
 	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+	icon?: string;
+}>();
+</script>
 <style scoped>
 .hexagon {
 	@apply z-[1] w-[16rem] h-[16rem] p-[2.5rem] block absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2;
@@ -23,7 +31,6 @@
 .image-hexagon {
 	@apply z-[2] absolute  w-[14rem] h-[14rem] top-[50%] left-[50%] -translate-x-1/2  -translate-y-1/2;
 	clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-	background: url(https://avatars.githubusercontent.com/u/53516684?v=4);
 	background-size: contain;
 }
 /* .hexagon::before {

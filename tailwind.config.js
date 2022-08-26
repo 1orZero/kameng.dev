@@ -13,6 +13,11 @@ module.exports = {
 				},
 			},
 		},
+		fontFamily: {
+			sans: ["Graphik", "sans-serif"],
+			serif: ["Merriweather", "serif"],
+			jetBrainMono: ["JetBrainsMono", "monospace"],
+		},
 	},
 	plugins: [],
 };
